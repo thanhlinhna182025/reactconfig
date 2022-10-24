@@ -1,25 +1,38 @@
 @import 'normalize.css';
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-:root{
+:root {
+  //layout
+  --default-layout-header-height: 60px;
+  --default-layout-width: 1150px;
+  --size-bar-width: 358px;
+  //Text-color
+  --text-black: rgb(22, 24, 35);
+  --text-gray: rgb(22, 24, 35, 0.5);
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  color: var(--text-gray);
+}
 
-    //layout
-    --default-layout-header-height:60px;
-    --default-layout-width:1150px;
-    --size-bar-width:358px;
-
-};
-html{
-    font-size:62.5%
-};
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-};
-body{
-    font-family: 'Roboto', sans-serif;
-    font-size:1.6rem;
-    line-height:1.5;
-    text-rendering: optimizeSpeed;
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}
+a[href] {
+  color: var(--text-gray);
+  text-decoration: none;
 }
