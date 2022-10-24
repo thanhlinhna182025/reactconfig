@@ -1,0 +1,70 @@
+//Style
+.wrapper {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 16px;
+  min-width: 100px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--white);
+  border: 1px solid transparent;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  + .wrapper {
+    margin-left: 12px;
+  }
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+.icon + .title,
+.title + .icon {
+  margin-left: 8px;
+}
+
+.rounded {
+  border-radius: 999px;
+  border: 1px solid rgba(22, 24, 35, 0.1);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-color: rgba(22, 24, 35, 0.2);
+  }
+}
+.primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+  &:hover {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+  }
+}
+.outline {
+  color: var(--primary-color);
+  border-color: currentColor;
+  &:hover {
+    background-color: rgba(254, 44, 85, 0.06);
+  }
+}
+
+.text {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+//Size
+.small {
+  padding: 4px 16px;
+  min-width: 88px;
+}
+.large {
+  padding: 14px 16px;
+  min-width: 148px;
+}
+.custom-login {
+  color: green;
+}
