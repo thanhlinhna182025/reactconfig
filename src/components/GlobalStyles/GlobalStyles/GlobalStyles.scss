@@ -28,6 +28,20 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   color: var(--text-gray);
+  // custom tippy
+  .tippy-box {
+    text-align: left;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    background-color: rgba(84, 84, 84, 0.92);
+    color: rgb(255, 255, 255);
+  }
+  .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+    border-bottom-color: rgba(84, 84, 84, 0.92);
+    top: -8px;
+  }
 }
 
 button,

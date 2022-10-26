@@ -12,7 +12,6 @@ const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
   const [history, setHistory] = useState([{ data: items }]);
-  console.log(history);
   const current = history[history.length - 1];
   const renderItems = () => {
     return current.data.map((item, index) => {
@@ -36,9 +35,11 @@ function Menu({ children, items = [], onChange = defaultFn }) {
   return (
     <Tippy
       delay={[0, 500]}
+      trigger="click"
       // visible
       interactive
       placement="bottom-end"
+      offset={[20, 10]}
       onHide={() => {
         setHistory((pre) => pre.slice(0, 1));
       }}

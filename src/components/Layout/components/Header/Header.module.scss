@@ -83,7 +83,23 @@
     left: 0;
   }
 }
-
+.actions {
+  display: flex;
+  align-items: center;
+}
+.action-btn {
+  font-size: 2.4rem;
+  background-color: transparent;
+  margin-left: 16px;
+  cursor: pointer;
+  padding: 3px 3px 0 3px;
+  color: rgb(32, 213, 236);
+}
+.avata {
+  width: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 .more-btn {
   font-size: 2rem;
   margin-left: 1rem;
