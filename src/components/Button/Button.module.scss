@@ -25,7 +25,12 @@
 .title + .icon {
   margin-left: 8px;
 }
-
+.icon {
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .rounded {
   border-radius: 999px;
   border: 1px solid rgba(22, 24, 35, 0.1);
