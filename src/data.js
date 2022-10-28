@@ -1,5 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEarthAsia, faQuestionCircle, faKeyboard } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEarthAsia,
+  faQuestionCircle,
+  faKeyboard,
+  faUser,
+  faVideoSlash,
+  faGear,
+  faSignOut,
+} from '@fortawesome/free-solid-svg-icons';
 export const MENU_DATA = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -39,4 +47,11 @@ export const MENU_DATA = [
   },
   { icon: <FontAwesomeIcon icon={faQuestionCircle} />, title: 'Feedback and help', to: '/feedback' },
   { icon: <FontAwesomeIcon icon={faKeyboard} />, title: 'Keyboard shortcuts' },
+];
+export const USER_MENU = [
+  { icon: <FontAwesomeIcon icon={faUser} />, title: 'View profile', to: '/user' },
+  { icon: <FontAwesomeIcon icon={faVideoSlash} />, title: 'LIVE studio', to: '/live' },
+  { icon: <FontAwesomeIcon icon={faGear} />, title: 'Setting', to: '/setting' },
+  ...MENU_DATA,
+  { icon: <FontAwesomeIcon icon={faSignOut} />, title: 'Log out', to: '/logout', separate: true },
 ];

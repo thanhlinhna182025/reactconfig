@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
   //layout
@@ -23,12 +23,19 @@ html {
   padding: 0;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   color: var(--text-gray);
-  // custom tippy
+}
+//Font
+@font-face {
+  font-family: ProximaNova;
+  src: url('/assets/fonts/ProximaNovaFont.otf');
+}
+// custom tippy
+body {
   .tippy-box {
     text-align: left;
     text-decoration: none;
