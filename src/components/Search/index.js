@@ -34,7 +34,10 @@ function Search() {
   }, [debounce]);
 
   const handleChange = (e) => {
-    setSearchText(e.target.value);
+    const text = e.target.value;
+    if (!text.startsWith(' ')) {
+      setSearchText(text);
+    }
   };
   const handleClear = () => {
     setSearchText('');
