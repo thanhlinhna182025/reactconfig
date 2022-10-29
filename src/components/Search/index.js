@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
-import { useDebounce } from '~/hooks';
-
 import HeadLessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
-import SearchItem from '~/components/SearchItem';
 
+import { useDebounce } from '~/hooks';
+import SearchItem from '~/components/SearchItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { SearchIcon, LoadingIcon, ClearIcon } from '~/components/Icons';
+import { search } from '~/api/search/searchService';
 
 function Search() {
   const cx = classNames.bind(styles);
@@ -25,12 +25,12 @@ function Search() {
       return;
     }
     setLoading(true);
-    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
-      .then((data) => data.json())
-      .then((results) => {
-        setSearchResult(results.data);
-        setLoading(false);
-      });
+    const searchApi = async () => {
+      const response = await search(debounce);
+      setSearchResult(response);
+      setLoading(false);
+    };
+    searchApi();
   }, [debounce]);
 
   const handleChange = (e) => {
