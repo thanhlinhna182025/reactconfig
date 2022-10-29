@@ -15,8 +15,22 @@ export const MENU_DATA = [
     children: {
       title: 'Language',
       data: [
+        { type: 'language', code: 'vi', title: 'Tiếng Việt dau' },
         { type: 'language', code: 'vi', title: 'Tiếng Việt' },
-        { type: 'language', code: 'china', title: 'Chinese' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt 0' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt 1' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt 2' },
+        { type: 'language', code: 'vi', title: 'Tiếng Việt cuoi' },
         {
           type: 'language',
           code: 'en',
@@ -25,7 +39,6 @@ export const MENU_DATA = [
             title: 'Language',
             data: [
               { type: 'language', code: 'vi', title: 'Tiếng Việt 2' },
-              { type: 'language', code: 'china', title: 'Chinese 2' },
               {
                 type: 'language',
                 code: 'en',

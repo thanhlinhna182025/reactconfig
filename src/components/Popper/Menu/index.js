@@ -33,35 +33,36 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
   };
 
   return (
-    <Tippy
-      delay={[0, 500]}
-      zIndex="999"
-      // visible
-      interactive
-      hideOnClick={hideOnClick}
-      placement="bottom-end"
-      offset={[20, 10]}
-      onHide={() => {
-        setHistory((pre) => pre.slice(0, 1));
-      }}
-      render={(attrs) => (
-        <PopperWrapper className="custom-popper-menu-list">
-          <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-            {history.length > 1 && (
-              <Header
-                title="Languaes"
-                onBack={() => {
-                  setHistory((pre) => pre.slice(0, pre.length - 1));
-                }}
-              />
-            )}
-            {renderItems()}
-          </div>
-        </PopperWrapper>
-      )}
-    >
-      {children}
-    </Tippy>
+    <div>
+      <Tippy
+        delay={[0, 500]}
+        interactive
+        visible
+        hideOnClick={hideOnClick}
+        placement="bottom-end"
+        offset={[20, 10]}
+        onHide={() => {
+          setHistory((pre) => pre.slice(0, 1));
+        }}
+        render={(attrs) => (
+          <PopperWrapper className="custom-popper-menu-list">
+            <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+              {history.length > 1 && (
+                <Header
+                  title="Languaes"
+                  onBack={() => {
+                    setHistory((pre) => pre.slice(0, pre.length - 1));
+                  }}
+                />
+              )}
+              <div className={cx('menu-scrollable')}>{renderItems()}</div>
+            </div>
+          </PopperWrapper>
+        )}
+      >
+        {children}
+      </Tippy>
+    </div>
   );
 }
 

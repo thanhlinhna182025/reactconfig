@@ -1,5 +1,9 @@
 .menu-list {
   width: 224px;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  
   .menu-item {
     margin-left: 0;
     width: 100%;
@@ -17,10 +21,16 @@
     }
   }
 }
+
 // Header
 .header {
   position: relative;
   height: 50px;
+  flex-shrink: 0;
+}
+.menu-scrollable {
+  height: calc(100% - 50px);
+  overflow-y: scroll;
 }
 .back-btn {
   width: 50px;

@@ -48,50 +48,52 @@ function Search() {
     setShowResult(false);
   };
   return (
-    <HeadLessTippy
-      visible={showResult && searchResult.length > 0}
-      interactive={true}
-      placement="bottom-end"
-      onClickOutside={handleHideResult}
-      render={(attrs) => (
-        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-          <PopperWrapper>
-            <h4 className={cx('search-title')}>Account</h4>
-            {searchResult.map((result) => (
-              <SearchItem data={result} key={result.id} />
-            ))}
-          </PopperWrapper>
+    <div>
+      <HeadLessTippy
+        visible={showResult && searchResult.length > 0}
+        interactive={true}
+        placement="bottom-end"
+        onClickOutside={handleHideResult}
+        render={(attrs) => (
+          <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+            <PopperWrapper>
+              <h4 className={cx('search-title')}>Account</h4>
+              {searchResult.map((result) => (
+                <SearchItem data={result} key={result.id} />
+              ))}
+            </PopperWrapper>
+          </div>
+        )}
+      >
+        <div className={cx('search')}>
+          <input
+            ref={inputRef}
+            placeholder="Tìm kiếm"
+            spellCheck={false}
+            value={searchText}
+            onChange={handleChange}
+            onFocus={() => {
+              setShowResult(true);
+            }}
+          />
+          <div className={cx('icon')}>
+            {!!searchText && (
+              <button className={cx('clear')} onClick={handleClear}>
+                <ClearIcon className="clear-icon" />
+              </button>
+            )}
+            {loading && (
+              <button className={cx('loading')} width="100%" height="100%">
+                <LoadingIcon className="loading-icon" />
+              </button>
+            )}
+          </div>
+          <button className={cx('search-btn')}>
+            <SearchIcon className={cx('search-icon')} />
+          </button>
         </div>
-      )}
-    >
-      <div className={cx('search')}>
-        <input
-          ref={inputRef}
-          placeholder="Tìm kiếm"
-          spellCheck={false}
-          value={searchText}
-          onChange={handleChange}
-          onFocus={() => {
-            setShowResult(true);
-          }}
-        />
-        <div className={cx('icon')}>
-          {!!searchText && (
-            <button className={cx('clear')} onClick={handleClear}>
-              <ClearIcon className="clear-icon" />
-            </button>
-          )}
-          {loading && (
-            <button className={cx('loading')} width="100%" height="100%">
-              <LoadingIcon className="loading-icon" />
-            </button>
-          )}
-        </div>
-        <button className={cx('search-btn')}>
-          <SearchIcon className={cx('search-icon')} />
-        </button>
-      </div>
-    </HeadLessTippy>
+      </HeadLessTippy>
+    </div>
   );
 }
 
