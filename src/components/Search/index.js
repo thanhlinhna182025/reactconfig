@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useDebounce } from '~/hooks';
 
 import HeadLessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
@@ -16,20 +17,21 @@ function Search() {
   const [loading, setLoading] = useState(false);
 
   const inputRef = useRef();
+  const debounce = useDebounce(searchText, 500);
 
   useEffect(() => {
-    if (!searchText.trim()) {
+    if (!debounce.trim()) {
       setSearchResult([]);
       return;
     }
     setLoading(true);
-    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchText)}&type=less`)
+    fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounce)}&type=less`)
       .then((data) => data.json())
       .then((results) => {
         setSearchResult(results.data);
         setLoading(false);
       });
-  }, [searchText]);
+  }, [debounce]);
 
   const handleChange = (e) => {
     setSearchText(e.target.value);
