@@ -2,10 +2,8 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faSignIn,
-  faEllipsisVertical,
-} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import { faSignIn, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
 import styles from '~/components/Layout/components/Header/Header.module.scss';
 import images from '~/assets/images';
@@ -15,6 +13,7 @@ import { MENU_DATA, USER_MENU } from '~/data';
 import { InBoxIcon, SentMessage, AddIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '~/components/Search';
+import routesConfig from '~/config/routesConfig';
 
 function Header() {
   const currentUser = true;
@@ -33,10 +32,10 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <a className={cx('logo')}>
+        <Link to={routesConfig.home} className={cx('logo')}>
           <img src={images.logo} alt="douyin" />
-        </a>
-        <Search/>
+        </Link>
+        <Search />
         <div className={cx('actions')}>
           <Button
             outline
