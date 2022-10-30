@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
@@ -31,7 +32,7 @@ function Button({
     _props.href = href;
     Comp = 'a';
   }
-  // Remove enventlistener when disabled button
+  // Remove eventlistener when disabled button
   if (disabled) {
     Object.keys(_props).forEach((key) => {
       if (key.startsWith('on') && typeof _props[key] === 'function') {
@@ -59,5 +60,21 @@ function Button({
     </Comp>
   );
 }
-
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  primary: PropTypes.bool,
+  outline: PropTypes.bool,
+  rounded: PropTypes.bool,
+  text: PropTypes.bool,
+  disabled: PropTypes.bool,
+  small: PropTypes.bool,
+  large: PropTypes.bool,
+  to: PropTypes.string,
+  link: PropTypes.string,
+  href: PropTypes.string,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  leftIcon: PropTypes.node,
+  rightIcon: PropTypes.node,
+};
 export default Button;

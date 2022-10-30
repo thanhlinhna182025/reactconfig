@@ -13,7 +13,7 @@ export const MENU_DATA = [
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
     title: 'English',
     children: {
-      title: 'Language',
+      title: 'Language 234',
       data: [
         { type: 'language', code: 'vi', title: 'Tiếng Việt dau' },
         { type: 'language', code: 'vi', title: 'Tiếng Việt' },
