@@ -1,5 +1,5 @@
-import { HeaderOnly } from '~/components/Layout';
-import routesConfig from '~/config/routesConfig';
+import { HeaderOnly } from '~/layouts';
+import config from '~/configs';
 
 //Page
 import Home from '~/pages/Home';
@@ -12,29 +12,29 @@ import PageNotFound from '~/pages/PageNotFound';
 //Public route
 const publicRoutes = [
   {
-    path: routesConfig.notfound,
+    path: config.routes.notfound,
     component: PageNotFound,
     layout: null,
   },
   {
-    path: routesConfig.home,
+    path: config.routes.home,
     component: Home,
   },
   {
-    path: routesConfig.following,
+    path: config.routes.following,
     component: Following,
   },
   {
-    path: routesConfig.profile,
+    path: config.routes.profile,
     component: Profile,
   },
   {
-    path: routesConfig.upload,
+    path: config.routes.upload,
     component: Upload,
     layout: HeaderOnly,
   },
   {
-    path: routesConfig.search,
+    path: config.routes.search,
     component: Search,
     layout: null,
   },

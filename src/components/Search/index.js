@@ -7,7 +7,7 @@ import { useDebounce } from '~/hooks';
 import SearchItem from '~/components/SearchItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { SearchIcon, LoadingIcon, ClearIcon } from '~/components/Icons';
-import { search } from '~/api/search/searchService';
+import { search } from '~/services/searchService';
 
 function Search() {
   const cx = classNames.bind(styles);

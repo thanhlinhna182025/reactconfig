@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { faSignIn, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
-import styles from '~/components/Layout/components/Header/Header.module.scss';
+import styles from '~/layouts/components/Header/Header.module.scss';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
@@ -13,7 +13,7 @@ import { MENU_DATA, USER_MENU } from '~/data';
 import { InBoxIcon, SentMessage, AddIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '~/components/Search';
-import routesConfig from '~/config/routesConfig';
+import config from '~/configs';
 
 function Header() {
   const currentUser = true;
@@ -32,7 +32,7 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <Link to={routesConfig.home} className={cx('logo')}>
+        <Link to={config.routes.home} className={cx('logo')}>
           <img src={images.logo} alt="douyin" />
         </Link>
         <Search />
