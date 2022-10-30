@@ -2,12 +2,12 @@ import { HeaderOnly } from '~/layouts';
 import config from '~/configs';
 
 //Page
-import Home from '~/pages/Home';
-import Following from '~/pages/Following';
-import Profile from '~/pages/Profile';
-import Upload from '~/pages/Upload';
-import Search from '~/pages/Search';
-import PageNotFound from '~/pages/PageNotFound';
+import Home from '~/pages/Home/Home';
+import Following from '~/pages/Following/Following';
+import Profile from '~/pages/Profile/Profile';
+import Upload from '~/pages/Upload/Upload';
+import Search from '~/pages/Search/Search';
+import PageNotFound from '~/pages/PageNotFound/PageNotFound';
 
 //Public route
 const publicRoutes = [
