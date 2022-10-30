@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-family);
+  line-height: 1;
 
   + .wrapper {
     margin-left: 12px;
@@ -71,11 +72,14 @@
   padding: 14px 16px;
   min-width: 148px;
 }
-.custom-login,
+
 .custom-upload {
   color: var(--text-black);
   border-color: #ccc;
   &:hover {
     background-color: rgba(22, 24, 35, 0.03);
   }
+}
+.custom-login {
+  color: var(--white);
 }

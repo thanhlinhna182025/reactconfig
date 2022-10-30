@@ -13,7 +13,7 @@ function Search() {
   const cx = classNames.bind(styles);
   const [searchResult, setSearchResult] = useState([]);
   const [searchText, setSearchText] = useState('');
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const inputRef = useRef();
@@ -47,6 +47,16 @@ function Search() {
   const handleHideResult = () => {
     setShowResult(false);
   };
+  const renderResults = (attrs) => (
+    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+      <PopperWrapper>
+        <h4 className={cx('search-title')}>Account</h4>
+        {searchResult.map((result) => (
+          <SearchItem data={result} key={result.id} />
+        ))}
+      </PopperWrapper>
+    </div>
+  );
   return (
     <div>
       <HeadLessTippy
@@ -54,16 +64,7 @@ function Search() {
         interactive={true}
         placement="bottom-end"
         onClickOutside={handleHideResult}
-        render={(attrs) => (
-          <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-            <PopperWrapper>
-              <h4 className={cx('search-title')}>Account</h4>
-              {searchResult.map((result) => (
-                <SearchItem data={result} key={result.id} />
-              ))}
-            </PopperWrapper>
-          </div>
-        )}
+        render={renderResults}
       >
         <div className={cx('search')}>
           <input

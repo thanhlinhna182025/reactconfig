@@ -32,6 +32,20 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
       );
     });
   };
+  const handleResetMenu = () => {
+    setHistory((pre) => pre.slice(0, pre.length - 1));
+  };
+  const renderMenu = (attrs) => (
+    <PopperWrapper className="custom-popper-menu-list">
+      <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+        {history.length > 1 && <Header title={current.title} onBack={handleResetMenu} />}
+        <div className={cx('menu-scrollable')}>{renderItems()}</div>
+      </div>
+    </PopperWrapper>
+  );
+  const handleResetToFirstPage = () => {
+    setHistory((pre) => pre.slice(0, 1));
+  };
 
   return (
     <div>
@@ -41,24 +55,8 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         hideOnClick={hideOnClick}
         placement="bottom-end"
         offset={[20, 10]}
-        onHide={() => {
-          setHistory((pre) => pre.slice(0, 1));
-        }}
-        render={(attrs) => (
-          <PopperWrapper className="custom-popper-menu-list">
-            <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-              {history.length > 1 && (
-                <Header
-                  title={current.title}
-                  onBack={() => {
-                    setHistory((pre) => pre.slice(0, pre.length - 1));
-                  }}
-                />
-              )}
-              <div className={cx('menu-scrollable')}>{renderItems()}</div>
-            </div>
-          </PopperWrapper>
-        )}
+        onHide={handleResetToFirstPage}
+        render={renderMenu}
       >
         {children}
       </Tippy>

@@ -61,7 +61,7 @@ function Header() {
                   <Image
                     className={cx('avata')}
                     src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fac92301a36c2275c99f393061ef04ca~c5_100x100.jpeg?x-expires=1666947600&x-signature=7%2FsJV0f4aH2x6FAwqymc0u7iyww%3D"
-                    alt="Truong Tuan Thanh"
+                    alt="TruongTuanThanh"
                     fallback={images.userAvata}
                   />
                 </button>
@@ -69,7 +69,7 @@ function Header() {
             </>
           ) : (
             <>
-              <Button outline className={cx('custom-login')} leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
+              <Button to="/" primary className={cx('custom-login')} leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
                 Login
               </Button>
               <Menu items={MENU_DATA} onChange={handleMenuChange}>
