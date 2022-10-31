@@ -1,0 +1,37 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 8px;
+  color: var(--text-black);
+  transition: all 0.2s linear;
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+  &.active {
+    color: var(--primary-color);
+    .icon-active {
+      display: block;
+    }
+    .icon {
+      display: none;
+    }
+  }
+}
+.icon,
+.icon-active {
+  height: 32px;
+  margin-right: 8px;
+}
+.icon-active {
+  display: none;
+}
