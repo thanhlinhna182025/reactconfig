@@ -27,7 +27,14 @@ function Search() {
     setLoading(true);
     const searchApi = async () => {
       const response = await search(debounce);
-      console.log(response);
+      // Tam thoi su dung
+      if (typeof response === 'undefined') {
+        setSearchResult([]);
+        setSearchText('');
+        setLoading(false);
+        return;
+      }
+      // Tam thoi su dung
       setSearchResult(response);
       setLoading(false);
     };
