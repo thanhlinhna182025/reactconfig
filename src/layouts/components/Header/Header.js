@@ -33,7 +33,7 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <Link to={config.routes.home} className={cx('logo')}>
-          <img src={images.logo} alt="douyin" />
+          <img src={images.logo} alt="tiktok" />
         </Link>
         <Search />
         <div className={cx('actions')}>

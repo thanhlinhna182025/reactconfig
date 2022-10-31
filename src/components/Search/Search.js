@@ -27,6 +27,7 @@ function Search() {
     setLoading(true);
     const searchApi = async () => {
       const response = await search(debounce);
+      console.log(response);
       setSearchResult(response);
       setLoading(false);
     };

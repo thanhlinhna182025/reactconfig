@@ -16,6 +16,16 @@
   justify-content: space-between;
   padding: 0 var(--padding-wrapper);
 }
+.logo {
+  width: 118px;
+  height: 42px;
+  img {
+    width: 100%;
+    height: 42px;
+    object-fit: cover;
+    display: block;
+  }
+}
 //Search
 
 .actions {
